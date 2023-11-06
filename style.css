@@ -1,0 +1,149 @@
+/* Realizando reset do css */
+*{
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #E1E1E5;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  background: linear-gradient(to top, #295DD6, #399DFA); 
+  background-clip: text;
+  -webkit-background-clip: text; /* Para navegadores WebKit (Safari/Chrome) */
+  color: transparent;
+  display: inline;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.container-principal {
+  display: flex;
+  flex-direction: column;
+}
+
+.caixa__texto {
+  width: 90vw;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  margin: 1em;
+  padding: 1em;
+}
+
+#alert {
+  color: red;
+  font-size: 14px;
+  margin: 1em 1em;
+  display: none;
+}
+
+.botao {
+  background-color: #295DD6;
+  color: #ffffff;
+  border: 1px solid #295DD6;
+  border-radius: 6px;
+  padding: 0.5em;
+  width: 90vw;
+  font-weight: 500;
+}
+
+.output {
+  margin-top: 1em;
+  background-color: #FFFFFF;
+  width: 90vw;
+  height: 45%;
+  display: none;
+  flex-direction: column;
+}
+ 
+#data {
+  margin: 2em auto 0;
+} 
+
+#city {
+  font-size: 26px;
+}
+
+#sweather {
+  margin-bottom: 0.5em;
+}
+
+#city, #degrees, #sweather {
+  color: #324252;
+}
+
+.output-dados {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 80%;
+}
+
+#degrees {
+  font-size: 5em;
+  font-weight: 700;
+}
+
+.degrees-default {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
+.sweather {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    width: 80%;
+  }
+
+  .container-principal {
+    display: block;
+    width: 100%;
+  }
+
+  .caixa__texto {
+    width: 80%;
+    margin: 1em 0.5em 1em 0;
+  }
+
+  #alert {
+    margin: 0;
+  }
+
+  .botao {
+    flex: 0;
+    padding: 12px 20px;
+    width: 18%;
+  }
+
+  .output {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    width: 50%;
+  }
+
+  .caixa__texto {
+    margin: 1em 0.4em 0.5em 0;
+    width: 70%;
+  }
+
+  .botao {
+    width: 28%;
+  }
+}
