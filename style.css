@@ -54,6 +54,7 @@ main {
   padding: 0.5em;
   width: 90vw;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .output {
