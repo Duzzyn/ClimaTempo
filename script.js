@@ -13,10 +13,9 @@ const alert = document.getElementById("alert")
 
 async function previsaoDoTempo (city) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br`)
-    if(!response.ok) {
-        throw new Error("Erro de requisição") // ao lançar um error, ou seja:
-        // "throw", as instruções após essa linha, não será executada!
-    }
+    
+    validation(response)
+
     const data = await response.json()            
     return data;
 }
@@ -62,13 +61,16 @@ function returnDate () {
     showData.innerText = fullDate;
 }
 
-function validation() {
-    if(cityInput.value === "") {
+function validation(response) { // verifica se a cidade foi encontrada(true or false), se a resposta for falso
+    // vai aparecer a resposta 404 (not found)
+    if(!response.ok) {
         alert.style.display = "block"
         alert.innerText = "Não foi possível encontrar a cidade."
         setTimeout(() => {
             alert.style.display = "none"
         }, 3000);
+        throw new Error() // toda vez q digitar uma cidade valida e depois uma invalida, vai aparecer undefined
+        //  na tela, com esse lançamento de erro, isso não vai acontecer
     }
 }
 
@@ -78,6 +80,5 @@ search.addEventListener("click", (e) => {
     e.preventDefault()
     const city = cityInput.value
 
-    validation()
     showWeather(city)
 })
