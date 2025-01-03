@@ -10,7 +10,7 @@ const alert = document.getElementById("alert")
 // functions
 
 async function previsaoDoTempo (city) {
-    const response = await fetch(`http://localhost:3000/weather?city=${city}`)
+    const response = await fetch(`https://api-clima-xnqx.onrender.com/weather?city=${city}`)
     validation(response)
 
     const data = await response.json()            
