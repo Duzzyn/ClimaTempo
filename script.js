@@ -1,5 +1,3 @@
-const key = "61639c86aa1ec11054e82d704c895d41";
-
 const cityInput = document.getElementById("input-city")
 const search = document.getElementById("btn-search")
 const showCity = document.getElementById("city")
@@ -12,8 +10,7 @@ const alert = document.getElementById("alert")
 // functions
 
 async function previsaoDoTempo (city) {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br`)
-    
+    const response = await fetch(`http://localhost:3000/weather?city=${city}`)
     validation(response)
 
     const data = await response.json()            
